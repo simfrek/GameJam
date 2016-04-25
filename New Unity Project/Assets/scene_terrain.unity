@@ -313,7 +313,6 @@ GameObject:
   - 114: {fileID: 121430348}
   - 114: {fileID: 121430352}
   - 114: {fileID: 121430353}
-  - 114: {fileID: 121430354}
   m_Layer: 10
   m_Name: 3rd Person Controller
   m_TagString: Engineer
@@ -479,17 +478,6 @@ MonoBehaviour:
   snapMaxSpeed: 720
   clampHeadPositionScreenSpace: .75
   lockCameraTimeout: .200000003
---- !u!114 &121430354
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 121430346}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74d4c08ab91bd4f4e8db5a6a14fedbd7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &124014594
 GameObject:
   m_ObjectHideFlags: 0
@@ -2081,7 +2069,6 @@ GameObject:
   - 114: {fileID: 509545628}
   - 114: {fileID: 509545632}
   - 114: {fileID: 509545633}
-  - 114: {fileID: 509545634}
   m_Layer: 8
   m_Name: 3rd Person Controller
   m_TagString: Scientist
@@ -2246,17 +2233,6 @@ MonoBehaviour:
   snapMaxSpeed: 720
   clampHeadPositionScreenSpace: .75
   lockCameraTimeout: .200000003
---- !u!114 &509545634
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 509545626}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74d4c08ab91bd4f4e8db5a6a14fedbd7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &523873574
 GameObject:
   m_ObjectHideFlags: 0
@@ -4667,6 +4643,7 @@ GameObject:
   - 92: {fileID: 983315063}
   - 81: {fileID: 983315062}
   - 114: {fileID: 983315066}
+  - 114: {fileID: 983315067}
   m_Layer: 8
   m_Name: CameraTopDownScientist
   m_TagString: Untagged
@@ -4721,14 +4698,14 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: .5
+    width: 1
     height: 1
   near clip plane: .300000012
   far clip plane: 1000
   field of view: 60
   orthographic: 0
   orthographic size: 5
-  m_Depth: 0
+  m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294963199
@@ -4751,6 +4728,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 509545627}
+--- !u!114 &983315067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 983315060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff5ffa95a5933244081985a0ef939089, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraMap: {fileID: 1646651042}
+  Player2: {fileID: 121430346}
+  Player2Camera: {fileID: 1087660709}
+  Player1: {fileID: 509545626}
 --- !u!1 &983797278
 GameObject:
   m_ObjectHideFlags: 0
@@ -5204,9 +5196,9 @@ Camera:
   m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: .5
+    x: 0
     y: 0
-    width: .5
+    width: 1
     height: 1
   near clip plane: .300000012
   far clip plane: 1000
@@ -8278,7 +8270,7 @@ Camera:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1646651042}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 3
   m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
