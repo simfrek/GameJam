@@ -21,11 +21,11 @@ public class torch : MonoBehaviour {
 		{
 			if (health > 0 && time == 0) 
 			{
-				if (Input.GetAxisRaw ("triggers") > 0.9) 
+				if (Input.GetAxisRaw ("L-Trigger") > 0.9) 
 				{
 					light.enabled = !light.enabled;
 					torchOn = true;
-					time = 15;
+					time = 60;
 				}
 			}
 			if (time > 0)
@@ -42,11 +42,11 @@ public class torch : MonoBehaviour {
 		{
 			if (health > 0 && time == 0) 
 			{
-				if (Input.GetAxisRaw ("triggers") > 0.9) 
+				if (Input.GetAxisRaw ("L-Trigger") > 0.9) 
 				{
 					light.enabled = !light.enabled;
 					torchOn = false;
-					time = 15;
+					time = 60;
 				}
 				health--;
 
