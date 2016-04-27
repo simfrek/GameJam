@@ -7,6 +7,8 @@ public class DoorOpenerX : MonoBehaviour {
 	private GameObject Engineer;
 	private GameObject Player;
 	public GameObject otherPlate;
+	public Material On;
+	public Material Off;
 
 	public string XYZ = "x";
 	public bool TwoPlates;
@@ -43,44 +45,54 @@ public class DoorOpenerX : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (TwoPlates) {
-			if (!ConstOpen)
-			{
-				if ( ((isOn (Scientist, gameObject) && isOn (Engineer, otherPlate)) || 
-					(isOn (Scientist, otherPlate) && isOn (Engineer, gameObject))) ) {
+			if (!ConstOpen) {
+				if (((isOn (Scientist, gameObject) && isOn (Engineer, otherPlate)) || 
+					(isOn (Scientist, otherPlate) && isOn (Engineer, gameObject)))) {
+					gameObject.GetComponent<MeshRenderer> ().material = On;
+					otherPlate.GetComponent<MeshRenderer> ().material = On;
 					isOpen = true;
 					ConstOpen = true;
-					Debug.Log ("PermOpen");;
-				}
-				else if ( (isOn (Scientist, gameObject) || isOn(Engineer, gameObject) || isOn(Scientist, otherPlate) || isOn(Engineer, otherPlate) ) && isOpen == false)
-				{
-					isOpen = true;
-					Debug.Log ("open");
-					MoveDoor(open);
-				}
-				else if ( (!isOn (Scientist, gameObject) && !isOn(Engineer, gameObject) && !isOn(Scientist, otherPlate) && !isOn(Engineer, otherPlate) ) && isOpen == true)
-				{
-					isOpen = false;
-					Debug.Log ("close");
-					MoveDoor(close);
+					Debug.Log ("PermOpen");
+				} else {
+					if ((isOn (Scientist, gameObject) || isOn (Engineer, gameObject)) && isOpen == false) {
+						gameObject.GetComponent<MeshRenderer> ().material = On;
+						isOpen = true;
+						Debug.Log ("open");
+						MoveDoor (open);
+					} else if ((isOn (Scientist, otherPlate) || isOn (Engineer, otherPlate)) && isOpen == false) {
+						otherPlate.GetComponent<MeshRenderer> ().material = On;
+						isOpen = true;
+						Debug.Log ("open");
+						MoveDoor (open);
+					} else if ((!isOn (Scientist, gameObject) && !isOn (Engineer, gameObject) && !isOn (Scientist, otherPlate) && !isOn (Engineer, otherPlate)) && isOpen == true) {
+						gameObject.GetComponent<MeshRenderer> ().material = Off;
+						otherPlate.GetComponent<MeshRenderer> ().material = Off;
+						isOpen = false;
+						Debug.Log ("close");
+						MoveDoor (close);
+					}
 				}
 			}
-		} else {
+		}else {
 			if (ConstOpen) {
 				if ((isOn (Scientist, gameObject) || isOn (Engineer, gameObject)) && isOpen == false) {
+					gameObject.GetComponent<MeshRenderer> ().material = On;
 					isOpen = true;
 					Debug.Log ("open");
-					MoveDoor(open);
+					MoveDoor (open);
 				}
 			} else {
 				if ((isOn (Scientist, gameObject) || isOn (Engineer, gameObject)) && isOpen == false) {
+					gameObject.GetComponent<MeshRenderer> ().material = On;
 					isOpen = true;
 					Debug.Log ("open");
-					MoveDoor(open);
+					MoveDoor (open);
 				} else 
-				if ((!isOn (Scientist, gameObject) && !isOn (Engineer, gameObject)) && isOpen == true) {
+			if ((!isOn (Scientist, gameObject) && !isOn (Engineer, gameObject)) && isOpen == true) {
+					gameObject.GetComponent<MeshRenderer> ().material = Off;
 					isOpen = false;
 					Debug.Log ("close");
-					MoveDoor(close);
+					MoveDoor (close);
 				}
 			}
 		}
@@ -89,12 +101,13 @@ public class DoorOpenerX : MonoBehaviour {
 	bool isOn(GameObject player_, GameObject plate)
 	{
 		if (plate.transform.position.x >= (player_.transform.position.x - range) &&
-		    plate.transform.position.x <= (player_.transform.position.x + range) && 
-		    plate.transform.position.z >= (player_.transform.position.z - range) &&
-		    plate.transform.position.z <= (player_.transform.position.z + range))
+			plate.transform.position.x <= (player_.transform.position.x + range) && 
+			plate.transform.position.z >= (player_.transform.position.z - range) &&
+			plate.transform.position.z <= (player_.transform.position.z + range)) {
 			return true;
-		else
+		} else {
 			return false;
+		}
 	}
 
 	void MoveDoor(Vector3 move)
