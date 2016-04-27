@@ -4922,7 +4922,7 @@ MonoBehaviour:
   Player2: {fileID: 121430346}
   Player2Camera: {fileID: 1087660709}
   Player1: {fileID: 509545626}
-  twoControllers: 0
+  twoControllers: 1
 --- !u!1 &983797278
 GameObject:
   m_ObjectHideFlags: 0
@@ -8673,7 +8673,7 @@ Camera:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1646651042}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 3
   m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
@@ -8710,7 +8710,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 865ab3d6632b0f547b85e30175bd37d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Target: {fileID: 121430347}
+  Target: {fileID: 509545627}
 --- !u!1 &1675487829
 GameObject:
   m_ObjectHideFlags: 0
