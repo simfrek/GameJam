@@ -43,6 +43,23 @@ public class toggleMap : MonoBehaviour {
 
 	bool isTwoControllers()
 	{
+		int i = 0;
+		int j = 0;
+		while (i < 10) {
+			try
+			{
+				if (Input.GetJoystickNames()[i] == "Controller (XBOX 360 For Windows)" || Input.GetJoystickNames()[i] == "XBOX 360 For Windows (Controller)"){
+					Debug.Log("Controller " + i + " exists");
+					j++;
+				}
+				i++;
+			}
+			catch{i++;}
+		}
+		if (j >= 2)
+			twoControllers = true;
+		else
+			twoControllers = false;
 		if (twoControllers == true) {
 			camera.rect = new Rect(0.5f,0,0.5f,1);
 			Player2Camera.camera.rect = new Rect(0,0,0.5f,1);

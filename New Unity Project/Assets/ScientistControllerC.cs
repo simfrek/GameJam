@@ -133,8 +133,8 @@ public AnimationClip jumpPoseAnimation;
 		// Always orthogonal to the forward vector
 		Vector3 right= new Vector3(forward.z, 0, -forward.x);
 		
-		float v= Input.GetAxisRaw("Vertical");
-		float h= Input.GetAxisRaw("Horizontal");
+		float v= Input.GetAxisRaw("Joy1Y");
+		float h= Input.GetAxisRaw("Joy1X");
 		
 		// Are we moving backwards or looking backwards
 		if (v < -0.2f)
@@ -399,7 +399,7 @@ public AnimationClip jumpPoseAnimation;
 	}
 	
 	bool IsMoving (){
-		return Mathf.Abs(Input.GetAxisRaw("Vertical")) + Mathf.Abs(Input.GetAxisRaw("Horizontal")) > 0.5f;
+		return Mathf.Abs(Input.GetAxisRaw("Joy1Y")) + Mathf.Abs(Input.GetAxisRaw("Joy1X")) > 0.5f;
 	}
 	
 	bool  HasJumpReachedApex (){

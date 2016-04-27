@@ -447,6 +447,7 @@ MonoBehaviour:
   runMaxAnimationSpeed: 1
   jumpAnimationSpeed: 1.14999998
   landAnimationSpeed: 1
+  cam: {fileID: 983315060}
   walkSpeed: 2
   trotSpeed: 4
   runSpeed: 6
@@ -4825,7 +4826,7 @@ GameObject:
   - 114: {fileID: 983315067}
   m_Layer: 8
   m_Name: CameraTopDownScientist
-  m_TagString: Untagged
+  m_TagString: SCam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4848,7 +4849,7 @@ AudioListener:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 983315060}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!92 &983315063
 Behaviour:
   m_ObjectHideFlags: 0
@@ -5326,7 +5327,7 @@ GameObject:
   - 114: {fileID: 1087660715}
   m_Layer: 10
   m_Name: CameraTopDownEngineer
-  m_TagString: Untagged
+  m_TagString: ECam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5349,7 +5350,7 @@ AudioListener:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1087660709}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!92 &1087660712
 Behaviour:
   m_ObjectHideFlags: 0
@@ -8652,7 +8653,7 @@ AudioListener:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1646651042}
-  m_Enabled: 0
+  m_Enabled: 1
 --- !u!92 &1646651045
 Behaviour:
   m_ObjectHideFlags: 0
