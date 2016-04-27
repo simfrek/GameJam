@@ -12,6 +12,8 @@ public class EngineerControllerC : MonoBehaviour {
 	public float runMaxAnimationSpeed = 1F;
 	public float jumpAnimationSpeed = 1F;
 	public float landAnimationSpeed =1F;
+
+	public GameObject cam;
 	
 	private Animation _animation;
 	
@@ -133,8 +135,15 @@ public AnimationClip jumpPoseAnimation;
 		// Always orthogonal to the forward vector
 		Vector3 right= new Vector3(forward.z, 0, -forward.x);
 		
-		float v= Input.GetAxisRaw("VerticalE");
-		float h= Input.GetAxisRaw("HorizontalE");
+		float v;
+		float h;
+		if (cam.GetComponent<toggleMap> ().twoControllers) {
+			v = Input.GetAxisRaw ("Joy2Y");
+			h = Input.GetAxisRaw ("Joy2X");
+		} else {
+			v = Input.GetAxisRaw ("Joy1Y");
+			h = Input.GetAxisRaw ("Joy1X");
+		}
 		
 		// Are we moving backwards or looking backwards
 		if (v < -0.2f)
@@ -399,7 +408,12 @@ public AnimationClip jumpPoseAnimation;
 	}
 	
 	bool IsMoving (){
-		return Mathf.Abs(Input.GetAxisRaw("VerticalE")) + Mathf.Abs(Input.GetAxisRaw("HorizontalE")) > 0.5f;
+
+		if (cam.GetComponent<toggleMap> ().twoControllers) {
+			return Mathf.Abs(Input.GetAxisRaw("Joy2Y")) + Mathf.Abs(Input.GetAxisRaw("Joy2X")) > 0.5f;
+		} else {
+			return Mathf.Abs(Input.GetAxisRaw("Joy1Y")) + Mathf.Abs(Input.GetAxisRaw("Joy1X")) > 0.5f;
+		}
 	}
 	
 	bool  HasJumpReachedApex (){
