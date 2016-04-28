@@ -19,7 +19,7 @@ public class PlayerShooting : MonoBehaviour {
 	{
 		// We are going to read the input every frame
 		Vector3 vNewInput = new Vector3(Input.GetAxis("RightAnalogX"), 0, Input.GetAxis("Right Analog Y"));
-		if(vNewInput.sqrMagnitude < 0.1f)
+		if(vNewInput.sqrMagnitude < 0.6f)
 		{
 			// Reset the shooting timing if we stop shooting
 			m_fAccumulatedFireTime = 0.0f;

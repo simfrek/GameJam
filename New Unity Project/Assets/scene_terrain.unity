@@ -313,7 +313,6 @@ GameObject:
   - 114: {fileID: 121430348}
   - 114: {fileID: 121430352}
   - 114: {fileID: 121430353}
-  - 114: {fileID: 121430354}
   m_Layer: 10
   m_Name: Engineer
   m_TagString: Engineer
@@ -335,7 +334,6 @@ Transform:
   - {fileID: 650961143}
   - {fileID: 124014595}
   - {fileID: 1231980598}
-  - {fileID: 523067096}
   m_Father: {fileID: 0}
   m_RootOrder: 2
 --- !u!114 &121430348
@@ -480,17 +478,6 @@ MonoBehaviour:
   snapMaxSpeed: 720
   clampHeadPositionScreenSpace: .75
   lockCameraTimeout: .200000003
---- !u!114 &121430354
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 121430346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c781ab17a23e72240bcdf558f67be7bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &124014594
 GameObject:
   m_ObjectHideFlags: 0
@@ -502,6 +489,7 @@ GameObject:
   - 33: {fileID: 124014598}
   - 135: {fileID: 124014597}
   - 23: {fileID: 124014596}
+  - 114: {fileID: 124014599}
   m_Layer: 12
   m_Name: Sphere
   m_TagString: Untagged
@@ -518,7 +506,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 5.05999994, z: 0}
   m_LocalScale: {x: 4, y: 1, z: 4}
-  m_Children: []
+  m_Children:
+  - {fileID: 523067096}
   m_Father: {fileID: 121430347}
   m_RootOrder: 2
 --- !u!23 &124014596
@@ -560,6 +549,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 124014594}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &124014599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 124014594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c781ab17a23e72240bcdf558f67be7bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &125741248
 GameObject:
   m_ObjectHideFlags: 0
@@ -2417,12 +2417,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 523067095}
   m_LocalRotation: {x: -.707106829, y: 6.18172464e-08, z: -6.18172464e-08, w: -.707106829}
-  m_LocalPosition: {x: -0, y: 0, z: .639999986}
-  m_LocalScale: {x: .388284445, y: .388284445, z: .388284445}
+  m_LocalPosition: {x: 0, y: -5.05999994, z: .0520000011}
+  m_LocalScale: {x: .0970711112, y: .0970711112, z: .388284445}
   m_Children:
   - {fileID: 1993373882}
-  m_Father: {fileID: 121430347}
-  m_RootOrder: 4
+  m_Father: {fileID: 124014595}
+  m_RootOrder: 0
 --- !u!114 &523067097
 MonoBehaviour:
   m_ObjectHideFlags: 0
