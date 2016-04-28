@@ -447,7 +447,6 @@ MonoBehaviour:
   runMaxAnimationSpeed: 1
   jumpAnimationSpeed: 1.14999998
   landAnimationSpeed: 1
-  cam: {fileID: 983315060}
   walkSpeed: 2
   trotSpeed: 4
   runSpeed: 6
@@ -6448,7 +6447,6 @@ GameObject:
   - 33: {fileID: 1254202726}
   - 65: {fileID: 1254202725}
   - 23: {fileID: 1254202724}
-  - 114: {fileID: 1254202728}
   m_Layer: 0
   m_Name: PressurePlate
   m_TagString: Untagged
@@ -6507,26 +6505,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 260822242}
   m_RootOrder: 19
---- !u!114 &1254202728
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1254202723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05de84acf32ca8840b01b9dfb48265c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  door: {fileID: 0}
-  otherPlate: {fileID: 0}
-  On: {fileID: 2100000, guid: 151a35ed1cc613c489b132cc1918cf52, type: 2}
-  Off: {fileID: 2100000, guid: ad162502f9c567447aa19f11a9a83c64, type: 2}
-  XYZ: x
-  TwoPlates: 0
-  ConstOpen: 0
-  isOpen: 0
-  distance: 6
 --- !u!1 &1254864586
 GameObject:
   m_ObjectHideFlags: 0
