@@ -12,8 +12,6 @@ public class EngineerControllerC : MonoBehaviour {
 	public float runMaxAnimationSpeed = 1F;
 	public float jumpAnimationSpeed = 1F;
 	public float landAnimationSpeed =1F;
-
-	public GameObject cam;
 	
 	private Animation _animation;
 	
@@ -137,7 +135,7 @@ public AnimationClip jumpPoseAnimation;
 		
 		float v;
 		float h;
-		if (cam.GetComponent<toggleMap> ().twoControllers) {
+		if (GameObject.FindGameObjectWithTag ("SCam").GetComponent<toggleMap> ().twoControllers) {
 			v = Input.GetAxisRaw ("Joy2Y");
 			h = Input.GetAxisRaw ("Joy2X");
 		} else {
@@ -409,7 +407,7 @@ public AnimationClip jumpPoseAnimation;
 	
 	bool IsMoving (){
 
-		if (cam.GetComponent<toggleMap> ().twoControllers) {
+		if (GameObject.FindGameObjectWithTag ("SCam").GetComponent<toggleMap> ().twoControllers) {
 			return Mathf.Abs(Input.GetAxisRaw("Joy2Y")) + Mathf.Abs(Input.GetAxisRaw("Joy2X")) > 0.5f;
 		} else {
 			return Mathf.Abs(Input.GetAxisRaw("Joy1Y")) + Mathf.Abs(Input.GetAxisRaw("Joy1X")) > 0.5f;
